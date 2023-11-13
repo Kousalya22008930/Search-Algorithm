@@ -19,30 +19,73 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
-
-
-
+def linearSearch(array,n,k):
+    for i in range(0,n):
+        if(k==array[i]):
+            return i
+    return -1        
+array = eval(input())
+k = eval(input()) 
+n=len(array)
+array.sort()
+print(array)
+result = linearSearch(array,n,k)
+if(result==-1):
+    print("Element not found")
+else:
+    print("Element found at index: ",result)
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
-
-
-
-
+def binarysearch(array,k,low,high):
+    while low<=high:
+        mid=low+(high-low)//2
+        if array[mid]==k:
+            return mid
+        elif array[mid]<k:
+            low=mid+1
+        else:
+            high=mid-1
+    return -1
+array=eval(input())
+array.sort()
+k=eval(input())
+result=binarysearch(array,k,0,len(array)-1)
+if(result==-1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
 
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
-
-
-
-
-
+def binarySearch(arr, k, low, high):
+    while low<=high:
+        mid=low+(high-low)//2
+        if array[mid]==k:
+            return mid
+        elif array[mid]<k:
+            return binarySearch(array,k,mid+1,high)
+        else:
+            return binarySearch(array,k,low,mid-1)
+    return -1    
+array = eval(input())
+k = eval(input()) 
+array.sort()
+result=binarySearch(array,k,0,len(array)-1)
+print(array)
+if(result==-1):
+    print("Element not found")
+else:
+    print("Element found at index: ",result)
 ```
 ## Sample Input and Output
 
-
-
+![image](https://github.com/Kousalya22008930/Search-Algorithm/assets/119389108/6367843b-999a-489d-9ccb-f044c0ce8f7c)
+![image](https://github.com/Kousalya22008930/Search-Algorithm/assets/119389108/af976b1b-9827-4d7e-b320-b312ef8287b0)
+![image](https://github.com/Kousalya22008930/Search-Algorithm/assets/119389108/f90a224e-c43e-4695-8600-00560c1bc501)
 
 
 
